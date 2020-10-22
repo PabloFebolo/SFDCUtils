@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Ajusta la hora de Apertura y de Cierre</description>
+        <name>AjustarHorarioLaboralUTC</name>
+        <label>AjustarHorarioLaboralUTC</label>
+        <locationX>608</locationX>
+        <locationY>136</locationY>
+        <assignmentItems>
+            <assignToReference>HoraApertura</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>TimeZoneOffset</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>HoraCierre</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>TimeZoneOffset</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AsignarFechaVencimiento</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignar la Fecha de Vencimiento calculada</description>
+        <name>AsignarFechaVencimiento</name>
+        <label>AsignarFechaVencimiento</label>
+        <locationX>756</locationX>
+        <locationY>61</locationY>
+        <assignmentItems>
+            <assignToReference>FechaVencimiento</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SLAReal</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Calcula una Fecha de Vencimiento desde una fecha base + Horas laborales.  Tiene en cta un horario corrido de horaas laborales de Lunes a Viernes</description>
+    <formulas>
+        <description>Cantidad de horas laborables por día laborable</description>
+        <name>HorasLaborablesXDia</name>
+        <dataType>Number</dataType>
+        <expression>((IF({!HoraApertura}&gt;{!HoraCierre},1,0) + {!HoraCierre}/24) - ({!HoraApertura}/24) )*24</expression>
+        <scale>6</scale>
+    </formulas>
+    <formulas>
+        <description>Agrega horas no laborables si el período de SLA se superpone con períodos no laborables
+
+Ejemplo (10 Horas laborables diarias): (SLA+ (FLOOR(SLA/10)*14) -14)</description>
+        <name>SLABase</name>
+        <dataType>Number</dataType>
+        <expression>{!SLAenHoras}+ FLOOR({!SLAenHoras}/{!HorasLaborablesXDia})*(24-{!HorasLaborablesXDia})</expression>
+        <scale>6</scale>
+    </formulas>
+    <formulas>
+        <description>Horas adicionales si el período de SLA termina en  fin de semana.</description>
+        <name>SLAFinde</name>
+        <dataType>Number</dataType>
+        <expression>Case(WEEKDAY( DATEVALUE({!FechaBase}+ ({!SLABase}+ {!SLAFindes}+{!SLANoche})/24)),
+1,24,
+7,48,
+0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Horas de fin de semana (sábados y domingos) que incluye el tiempo de SLA real</description>
+        <name>SLAFindes</name>
+        <dataType>Number</dataType>
+        <expression>FLOOR(({!SLABase}+ {!SLANoche})/24/7) * 48</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Si el SLA termina luego del cierre del horario laboral o antes de la inmediato próximo horario de apertura, se le agrega las horas no laborables de un día (normalmente horas nocturnas).</description>
+        <name>SLANoche</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+OR(
+(VALUE(MID(TEXT({!FechaBase}+{!SLABase}/24),12,2))&lt;{!HoraApertura}),
+(VALUE(MID(TEXT({!FechaBase}+{!SLABase}/24),12,2))&gt;{!HoraCierre})
+),(24-{!HorasLaborablesXDia}),0 )</expression>
+        <scale>6</scale>
+    </formulas>
+    <formulas>
+        <name>SLANoteDate</name>
+        <dataType>DateTime</dataType>
+        <expression>{!FechaBase}+{!SLABase}/24</expression>
+    </formulas>
+    <formulas>
+        <description>Fecha real de vencimiento. Implica FechaBase + SLA + Horas No laborables intermedias</description>
+        <name>SLAReal</name>
+        <dataType>DateTime</dataType>
+        <expression>{!FechaBase}+ (({!SLABase}+{!SLANoche}+ {!SLAFindes}+{!SLAFinde})/24)</expression>
+    </formulas>
+    <formulas>
+        <description>Convierte un label con formato de TimeZoneOffsset (GMT+00:00) a un Decimal (Unidad Hora = 1)</description>
+        <name>TimeZoneOffset</name>
+        <dataType>Number</dataType>
+        <expression>(((VALUE(MID({!TimeZoneLabel},6,2))*60)+VALUE(MID({!TimeZoneLabel},9,2)))/60)*
+IF(MID({!TimeZoneLabel},9,2)=&apos;+&apos;,-1,1)</expression>
+        <scale>6</scale>
+    </formulas>
+    <interviewLabel>ObtenerFechaSLA {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ObtenerFechaSLA</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>GetTimeZone</name>
+        <label>GetTimeZone</label>
+        <locationX>423</locationX>
+        <locationY>99</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AjustarHorarioLaboralUTC</targetReference>
+        </connector>
+        <filters>
+            <field>EntityParticleId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>User.TimeZoneSidKey</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Value</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.TimeZoneSidKey</elementReference>
+            </value>
+        </filters>
+        <object>PicklistValueInfo</object>
+        <outputAssignments>
+            <assignToReference>TimeZoneLabel</assignToReference>
+            <field>Label</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>45</locationY>
+        <connector>
+            <targetReference>GetTimeZone</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Fecha desde la cual se debe adicionar el período de SLA</description>
+        <name>FechaBase</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>FechaVencimiento</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Hora de apertura diaria (Unidad de Medida = 24 Horas)
+Ejemplo:   8 🡲 08:00  |  20 🡲 20:00 | 7.5 🡲 07:30</description>
+        <name>HoraApertura</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>6</scale>
+        <value>
+            <numberValue>8.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Hora de cierre diaria (Unidad de Medida = 24 Horas)
+Ejemplo:  8 🡲 08:00 | 20 🡲 20:00 | 7.5 🡲 07:30</description>
+        <name>HoraCierre</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>6</scale>
+        <value>
+            <numberValue>18.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Cantidad de Horas (Laborables) indicadas en el SLA</description>
+        <name>SLAenHoras</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>6</scale>
+    </variables>
+    <variables>
+        <description>Label de TimeZone, donde está la diferencia en horas y Minutos
+Ejemplo: (GMT-03:00)</description>
+        <name>TimeZoneLabel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>(GMT+00:00)</stringValue>
+        </value>
+    </variables>
+</Flow>
