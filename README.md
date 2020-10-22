@@ -1,2 +1,3 @@
 # SFDCUtils
-Algunas Utilidades para entornos Salesforce
+
+Utilities from Salesforce environment
