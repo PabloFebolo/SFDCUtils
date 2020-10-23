@@ -4,8 +4,8 @@
         <description>Ajusta la hora de Apertura y de Cierre</description>
         <name>AjustarHorarioLaboralUTC</name>
         <label>AjustarHorarioLaboralUTC</label>
-        <locationX>608</locationX>
-        <locationY>136</locationY>
+        <locationX>565</locationX>
+        <locationY>87</locationY>
         <assignmentItems>
             <assignToReference>HoraApertura</assignToReference>
             <operator>Add</operator>
@@ -28,8 +28,8 @@
         <description>Asignar la Fecha de Vencimiento calculada</description>
         <name>AsignarFechaVencimiento</name>
         <label>AsignarFechaVencimiento</label>
-        <locationX>756</locationX>
-        <locationY>61</locationY>
+        <locationX>711</locationX>
+        <locationY>87</locationY>
         <assignmentItems>
             <assignToReference>FechaVencimiento</assignToReference>
             <operator>Assign</operator>
@@ -39,7 +39,7 @@
         </assignmentItems>
     </assignments>
     <description
-  >Calcula una Fecha de Vencimiento desde una fecha base + Horas laborales.  Tiene en cta un horario corrido de horaas laborales de Lunes a Viernes</description>
+  >Calcula una Fecha de Vencimiento desde una fecha base + Horas laborales.  Tiene en cta un horario corrido de horas laborales de Lunes a Viernes</description>
     <formulas>
         <description
     >Cantidad de horas laborables por día laborable</description>
@@ -51,34 +51,45 @@
     </formulas>
     <formulas>
         <description
+    >Dia final del periodo (eventualmentesábado o domingo)</description>
+        <name>SLADiaAux</name>
+        <dataType>Date</dataType>
+        <expression
+    >DATEVALUE({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes} +{!SLAFindes} + {!SLANocheFinal} + {!TimeZoneOffset})/24)</expression>
+    </formulas>
+    <formulas>
+        <description
+    >La fecha base en formato date (ajustado por timezone)</description>
+        <name>SLADiaBase</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!FechaBase}+({!TimeZoneOffset}/24))</expression>
+    </formulas>
+    <formulas>
+        <description
     >Agrega horas no laborables si el período de SLA se superpone con períodos no laborables
 
 Ejemplo (10 Horas laborables diarias): (SLA+ (FLOOR(SLA/10)*14) -14)</description>
-        <name>SLABase</name>
+        <name>SLADiasEnteros</name>
+        <dataType>Number</dataType>
+        <expression>Floor({!SLAenHoras}/{!HorasLaborablesXDia})*24</expression>
+        <scale>6</scale>
+    </formulas>
+    <formulas>
+        <description
+    >Cantidad de Domingos en el período (medido en horas)</description>
+        <name>SLADomingos</name>
         <dataType>Number</dataType>
         <expression
-    >{!SLAenHoras}+ FLOOR({!SLAenHoras}/{!HorasLaborablesXDia})*(24-{!HorasLaborablesXDia})</expression>
-        <scale>6</scale>
+    >FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-1)))/7)*24</expression>
+        <scale>0</scale>
     </formulas>
     <formulas>
         <description
     >Horas adicionales si el período de SLA termina en  fin de semana.</description>
         <name>SLAFindeFinal</name>
         <dataType>Number</dataType>
-        <expression
-    >Case(WEEKDAY( DATEVALUE({!FechaBase}+ ({!SLABase}+ {!SLAFindeInicial}+{!SLAFindes}+{!SLANocheFinal})/24)),
+        <expression>Case(WEEKDAY({!SLADiaAux}),
 1,24,
-7,48,
-0)</expression>
-        <scale>0</scale>
-    </formulas>
-    <formulas>
-        <description>Agrega horas del primer Fin de semana</description>
-        <name>SLAFindeInicial</name>
-        <dataType>Number</dataType>
-        <expression
-    >Case(WEEKDAY(DATEVALUE({!FechaBase}+(IF({!SLABase}&gt;24,2,0)))),
-1,48,
 7,48,
 0)</expression>
         <scale>0</scale>
@@ -88,31 +99,26 @@ Ejemplo (10 Horas laborables diarias): (SLA+ (FLOOR(SLA/10)*14) -14)</descriptio
     >Horas de fin de semana (sábados y domingos) que incluye el tiempo de SLA real</description>
         <name>SLAFindes</name>
         <dataType>Number</dataType>
-        <expression>FLOOR({!SLABase}/24/7) * 48</expression>
+        <expression>{!SLASabados}+{!SLADomingos}</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
-        <description
-    >Si el SLA termina luego del cierre del horario laboral o antes de la inmediato próximo horario de apertura, se le agrega las horas no laborables de un día (normalmente horas nocturnas).</description>
+        <description>Horas que excenden los dias de espera</description>
+        <name>SLAHorasExcedentes</name>
+        <dataType>Number</dataType>
+        <expression>mod({!SLAenHoras},{!HorasLaborablesXDia})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Agrega horas de la noche del día base</description>
         <name>SLANocheFinal</name>
         <dataType>Number</dataType>
         <expression>IF(
 OR(
-(VALUE(MID(TEXT({!FechaBase}+({!SLAFindeInicial}+{!SLABase}+{!SLAFindes})/24),12,2))&lt;{!HoraApertura}),
-(VALUE(MID(TEXT({!FechaBase}+({!SLAFindeInicial}+{!SLABase}+{!SLAFindes})/24),12,2))&gt;{!HoraCierre}))
-,(24-{!HorasLaborablesXDia})
-,0 )</expression>
-        <scale>6</scale>
-    </formulas>
-    <formulas>
-        <description>Agrega horas de la noche del día base</description>
-        <name>SLANocheInicial</name>
-        <dataType>Number</dataType>
-        <expression>IF(
-OR(
-(VALUE(MID(TEXT({!FechaBase}+{!SLAenHoras}/24),12,2))&lt;{!HoraApertura}),
-(VALUE(MID(TEXT({!FechaBase}+{!SLAenHoras}/24),12,2))&gt;{!HoraCierre})
-),(24-{!HorasLaborablesXDia}),0 )</expression>
+(VALUE(MID(TEXT(({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes} +{!SLAFindes})/24)),12,2))&lt;{!HoraApertura}),
+(VALUE(MID(TEXT(({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes} +{!SLAFindes})/24)),12,2))&gt;{!HoraCierre}))
+
+,(24-{!HorasLaborablesXDia}),0 )</expression>
         <scale>2</scale>
     </formulas>
     <formulas>
@@ -121,7 +127,16 @@ OR(
         <name>SLAReal</name>
         <dataType>DateTime</dataType>
         <expression
-    >{!FechaBase}+ (({!SLABase}+{!SLAFindeInicial}+{!SLAFindeFinal}+{!SLANocheFinal}+ {!SLAFindes})/24)</expression>
+    >{!FechaBase}+ (({!SLAHorasExcedentes}+{!SLADiasEnteros}+{!SLAFindes}+{!SLANocheFinal}+{!SLAFindeFinal})/24)</expression>
+    </formulas>
+    <formulas>
+        <description
+    >Cantidad de Sábados en el período (medido en horas)</description>
+        <name>SLASabados</name>
+        <dataType>Number</dataType>
+        <expression
+    >FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-7)))/7)*24</expression>
+        <scale>0</scale>
     </formulas>
     <formulas>
         <description
@@ -157,8 +172,8 @@ IF(MID({!TimeZoneLabel},9,2)=&apos;+&apos;,-1,1)</expression>
     <recordLookups>
         <name>GetTimeZone</name>
         <label>GetTimeZone</label>
-        <locationX>423</locationX>
-        <locationY>99</locationY>
+        <locationX>408</locationX>
+        <locationY>87</locationY>
         <assignNullValuesIfNoRecordsFound
     >true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -185,20 +200,13 @@ IF(MID({!TimeZoneLabel},9,2)=&apos;+&apos;,-1,1)</expression>
         </outputAssignments>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
-        <locationY>45</locationY>
+        <locationX>25</locationX>
+        <locationY>71</locationY>
         <connector>
             <targetReference>GetTimeZone</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
-    <variables>
-        <name>aux1</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
+    <status>Active</status>
     <variables>
         <description
     >Fecha desde la cual se debe adicionar el período de SLA</description>
