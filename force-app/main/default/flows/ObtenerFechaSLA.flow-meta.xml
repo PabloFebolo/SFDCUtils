@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignments>
+        <description
+    >Ajusta la Fecha Base si esta estuviera fuera de Horario Laboral</description>
+        <name>AjustaFechaBase</name>
+        <label>AjustaFechaBase</label>
+        <locationX>725</locationX>
+        <locationY>94</locationY>
+        <assignmentItems>
+            <assignToReference>FechaBase</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SLAAjusteHorario</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AsignarFechaVencimiento</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Ajusta la hora de Apertura y de Cierre</description>
         <name>AjustarHorarioLaboralUTC</name>
         <label>AjustarHorarioLaboralUTC</label>
-        <locationX>565</locationX>
-        <locationY>87</locationY>
+        <locationX>580</locationX>
+        <locationY>93</locationY>
         <assignmentItems>
             <assignToReference>HoraApertura</assignToReference>
             <operator>Add</operator>
@@ -21,15 +39,15 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>AsignarFechaVencimiento</targetReference>
+            <targetReference>AjustaFechaBase</targetReference>
         </connector>
     </assignments>
     <assignments>
         <description>Asignar la Fecha de Vencimiento calculada</description>
         <name>AsignarFechaVencimiento</name>
         <label>AsignarFechaVencimiento</label>
-        <locationX>711</locationX>
-        <locationY>87</locationY>
+        <locationX>926</locationX>
+        <locationY>86</locationY>
         <assignmentItems>
             <assignToReference>FechaVencimiento</assignToReference>
             <operator>Assign</operator>
@@ -48,6 +66,33 @@
         <expression
     >((IF({!HoraApertura}&gt;{!HoraCierre},1,0) + {!HoraCierre}/24) - ({!HoraApertura}/24) )*24</expression>
         <scale>6</scale>
+    </formulas>
+    <formulas>
+        <description>Ajusta la fecha si la fecha base es domingo</description>
+        <name>SLAAjustarDomingo</name>
+        <dataType>Number</dataType>
+        <expression>IF(WeekDay({!SLADiaBase})=1,24,0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description
+    >Ajutsta los sobados si la fecha base es sábado</description>
+        <name>SLAAjustarSabado</name>
+        <dataType>Number</dataType>
+        <expression>IF(WeekDay({!SLADiaBase})=7,24,0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description
+    >Ajusta el horario se esta fuera de los horarios laborales</description>
+        <name>SLAAjusteHorario</name>
+        <dataType>DateTime</dataType>
+        <expression
+    >IF({!SLAAjustarSabado}!=0 || {!SLAAjustarDomingo}!=0,(DATETIMEVALUE({!SLADiaBase})+({!HoraCierre}/24)),
+IF( {!FechaBase}&gt; (DATETIMEVALUE({!SLADiaBase})+({!HoraCierre}/24)),
+(DATETIMEVALUE({!SLADiaBase})+({!HoraCierre}/24)),
+IF({!FechaBase}&lt; (DATETIMEVALUE({!SLADiaBase})+({!HoraApertura}/24)),
+(DATETIMEVALUE({!SLADiaBase}-1)+({!HoraCierre}/24)),{!FechaBase})))</expression>
     </formulas>
     <formulas>
         <description
@@ -80,7 +125,7 @@ Ejemplo (10 Horas laborables diarias): (SLA+ (FLOOR(SLA/10)*14) -14)</descriptio
         <name>SLADomingos</name>
         <dataType>Number</dataType>
         <expression
-    >FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-1)))/7)*24</expression>
+    >(FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-1)))/7)*24)-{!SLAAjustarDomingo}</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
@@ -135,7 +180,7 @@ OR(
         <name>SLASabados</name>
         <dataType>Number</dataType>
         <expression
-    >FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-7)))/7)*24</expression>
+    >(FLOOR(((({!FechaBase} + ({!SLADiasEnteros} + {!SLAHorasExcedentes})/24)-{!FechaBase})+(WEEKDAY({!SLADiaBase}-7)))/7)*24)-{!SLAAjustarSabado}</expression>
         <scale>0</scale>
     </formulas>
     <formulas>
