@@ -8,6 +8,10 @@
         <application>standard__AllTabSet</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>AccountUtility</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
