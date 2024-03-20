@@ -12,6 +12,10 @@
         <apexClass>AccountUtility</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>ControlDeFlujo__mdt</name>
+    </customMetadataTypeAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
