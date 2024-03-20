@@ -20,6 +20,10 @@
         <enabled>true</enabled>
         <name>Banfield</name>
     </customPermissions>
+    <customSettingAccesses>
+        <enabled>true</enabled>
+        <name>PAFTest__c</name>
+    </customSettingAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
