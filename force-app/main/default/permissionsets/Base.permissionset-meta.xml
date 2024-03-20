@@ -16,6 +16,10 @@
         <enabled>true</enabled>
         <name>ControlDeFlujo__mdt</name>
     </customMetadataTypeAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Banfield</name>
+    </customPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
