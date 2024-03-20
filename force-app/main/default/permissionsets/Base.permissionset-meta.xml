@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Garage</application>
@@ -25,6 +25,10 @@
         <name>PAFTest__c</name>
     </customSettingAccesses>
     <description>Permisssion Set to Test</description>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>PAFTest-Credential</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
