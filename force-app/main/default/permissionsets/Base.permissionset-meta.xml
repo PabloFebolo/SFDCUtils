@@ -34,6 +34,10 @@
         <field>Account.AccountNumber</field>
         <readable>true</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>PAFTest</flow>
+    </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Base</label>
 </PermissionSet>
