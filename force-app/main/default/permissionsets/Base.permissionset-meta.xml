@@ -53,4 +53,8 @@
         <apexPage>AccountDetail</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
+    <recordTypeVisibilities>
+        <recordType>Account.Billing</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
 </PermissionSet>
