@@ -49,4 +49,8 @@
         <object>Account</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>AccountDetail</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
 </PermissionSet>
