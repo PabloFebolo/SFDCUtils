@@ -1,0 +1,68 @@
+// Traer los nombres todos las tablas/objetos
+SELECT SObjectType FROM ObjectPermissions GROUP BY SObjectType ORDER BY SObjectType ASC
+
+
+
+//Meta Objetos (ejwcuar via Tooling API)
+SELECT DeveloperName,DurableId,Datatype,Label FROM FieldDefinition Where EntityDefinitionId='FlexiPage'
+
+DataStorageMB
+
+SELECT Id,Type,Label,Max,Remaining  FROM EntityLimit Where EntityDefinitionId='EntityLimit'
+
+SELECT Id,Type,Label,Max,Remaining  FROM EntityLimit Where EntityDefinitionId='Organization'
+
+SELECT Id,Type,Label,Max,Remaining  FROM EntityLimit Where EntityDefinitionId='Storage'
+
+SELECT Id  FROM Limits
+
+
+// Objetos
+SELECT DeveloperName,DurableId,Label FROM EntityDefinition Where DurableId='FlexiPage'
+// Campos de los objetos (DurableId -->EntityDefinitionId)
+SELECT DeveloperName,DurableId,QualifiedApiName,Datatype,Label FROM FieldDefinition Where EntityDefinitionId='OrgWideEmailAddress'
+// Campos de los objetos (EntityDefinitionId -->EntityDefinitionId)
+// Campos de los objetos (DurableId -->FieldDefinitionId)
+SELECT FieldDefinitionId,DefaultValueFormula,QualifiedApiName FROM EntityParticle Where EntityDefinitionId='Attachment' and FieldDefinitionId='Account.Industry'
+// Valores de Picklists (FieldDefinitionId -->EntityParticleId)
+SELECT Value,Label FROM PickListValueInfo Where EntityParticleId = 'User.TimeZoneSidKey'
+
+
+
+
+//buscar Custom Fields
+SELECT  CreatedDate, CreatedBy.Name, DeveloperName, EntityDefinition.DeveloperName, TableEnumOrId, Id, LastModifiedBy.Name, LastModifiedDate, Length, NamespacePrefix, Precision, Scale,Description
+FROM CustomField 
+where NamespacePrefix = null
+
+//buscar Custom Objects
+select id, DeveloperName, CreatedBy.Name, CreatedDate, Description
+from CustomObject 
+
+
+
+
+// Apex Jobs
+SELECT id,ApexClassId,Status,CreatedDate,ExtendedStatus FROM AsyncApexJob ORDER BY CreatedDate DESC NULLS FIRST
+
+
+//E-Mails
+SELECT Id,MessageDate,Subject,ToAddress FROM EmailMessage ORDER BY CreatedDate DESC NULLS FIRST
+
+
+// Custom Apps
+SELECT ApplicationId,NamespacePrefix, name, label, Type FROM AppMenuItem WHERE IsAccessible = true
+
+//FlexiPages (via tooling Api)
+Select id,DeveloperName,Type,EntityDefinition from FlexiPage
+
+
+Case
+WorkOrder
+Contact
+Page Layout Asignación
+
+
+
+SELECT DeveloperName FROM EntityDefinition WHERE IsCustomizable = true
+

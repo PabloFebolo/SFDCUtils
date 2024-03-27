@@ -1,0 +1,46 @@
+// Lookup(
+// Apex Class
+// Visualforce Page
+// Flow Definition
+// Service Provider
+// Connected App
+// Custom App
+// External Data Source
+// Named Credential
+// Custom Object Definition
+// Service Presence Status
+// Custom Permission
+// External Credential Parameter
+// Organization-wide From Email Address
+
+// ID                 PARENT.NAME SETUPENTITYID      SETUPENTITYTYPE             
+// ────────────────── ─────────── ────────────────── ─────────────────────────── 
+// 0J0Kc0000000gBXKAY Base        01I2M000002UFNWUA4 CustomEntityDefinition      * customMetadataTypeAccesses
+// 0J0Kc0000000gBhKAI Base        01IKc000000GqP0MAK CustomEntityDefinition      * customSettingAccesses
+// 0J0Kc0000000gBNKAY Base        01p2M00000Nv5RsQAJ ApexClass                   *
+// 0J0Kc0000000gBIKAY Base        02u2M000001V0myQAC TabSet                      * tabSettings (acceso indirecto, SELECT Id,name,Visibility,ParentId,Parent.name FROM PermissionSetTabSetting where PARENTID='0PSKc00000001JmOAI'))
+// 0J0Kc0000000gBJKAY Base        02u410000015SMQAA2 TabSet                      * tabSettings 👆 (Select id,DeveloperName from CustomApplication where id='02u410000015SMQAA2' // SELECT id,Description,DeveloperName,DurableId,Label FROM AppDefinition WHERE DeveloperName = 'Garage' // SELECT id,SortOrder,TabDefinitionId, TabDefinition.Name,TabDefinition.Label FROM AppTabMember WHERE AppDefinition.DurableId = '06m410000015SMQAA2' )  
+// 0J0Kc0000000o9QKAQ Base        0662M000006gfHIQAY ApexPage                    *
+// 0J0Kc0000000gBcKAI Base        0CP2M000000TaHSWA0 CustomPermission            *
+// 0J0Kc0000000oCmKAI Base        0D2Kc000000sXtWKAU OrgWideEmailAddress         *
+// 0J0Kc0000000oCcKAI Base        0H42M000000Wa4USAS ConnectedApplication        *
+// 0J0Kc0000000oChKAI Base        0N52M000000056bSAA ServicePresenceStatus       *
+// 0J0Kc0000000gBmKAI Base        0puKc000000TN1FIAW ExternalCredentialParameter     0ptKc000000TN1F  0ptKc000000TN1F
+// 0J0Kc0000000o9LKAQ Base        300Kc0000008RBaIAM FlowDefinition              *
+
+
+SELECT Id, Parent.Name,ParentId, SetupEntityId, SetupEntityType FROM SetupEntityAccess where Parent.Name='Base'
+
+SELECT Id,QualifiedApiName FROM EntityDefinition where DurableId='01I2M000002UFNWUA4' 
+SELECT Id,QualifiedApiName FROM EntityDefinition where IsCustomSetting=true and DurableId='01IKc000000GqP0MAK' 
+SELECT Id,name FROM Apexclass where id='01p2M00000Nv5RsQAJ'
+SELECT Id,name,Visibility,ParentId,Parent.name FROM PermissionSetTabSetting where PARENTID='0PSKc00000001JmOAI'
+SELECT Id,name FROM ApexPage where id='0662M000006gfHIQAY'
+SELECT Id,DeveloperName FROM CustomPermission where id='0CP2M000000TaHSWA0' 
+SELECT Id,Address FROM OrgWideEmailAddress where id='0D2Kc000000sXtWKAU' 
+SELECT Id,Name FROM ConnectedApplication where id='0H42M000000Wa4USAS'
+SELECT Id,DeveloperName FROM ServicePresenceStatus where id='0N52M000000056bSAA'
+SELECT id, ExternalCredential.developername,parameterName,parameterType,parameterValue,ExternalCredentialId FROM ExternalCredentialParameter where id='0puKc000000TN1FIAW'
+SELECT Id,ApiName FROM FlowDefinitionView where id='300Kc0000008RBaIAM'
+
+

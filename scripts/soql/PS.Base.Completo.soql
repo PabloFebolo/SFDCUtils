@@ -1,0 +1,6 @@
+SELECT Id, Name, Profile.Name, IsOwnedByProfile,
+(SELECT SobjectType, PermissionsCreate, PermissionsRead,PermissionsDelete,PermissionsViewAllRecords,PermissionsModifyAllRecords FROM ObjectPerms),
+(SELECT SobjectType, Field, PermissionsRead,PermissionsEdit FROM FieldPerms),
+(SELECT SetupEntityId, SetupEntityType FROM SetupEntityAccessItems)
+FROM PermissionSet
+where name='Base'
