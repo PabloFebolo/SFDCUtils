@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License__c</fullName>
+    <description>Either the related permission set license or the user license associated with this permission set. Available in API version 38.0 and later. Use this field instead of userLicense, which is deprecated and only available up to API Version 37.0.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Either the related permission set license or the user license associated with this permission set.</inlineHelpText>
+    <label>License</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
