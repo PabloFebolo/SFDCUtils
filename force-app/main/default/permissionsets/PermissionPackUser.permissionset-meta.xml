@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customPermissions>
-        <enabled>true</enabled>
-        <name>SensitiveChangeAllowed</name>
-    </customPermissions>
-    <description>All permissions required to manage the PerPack package</description>
+    <description>Permissions required to manage the permissions pack</description>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>PermissionPackItem__c.ComponentName__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -41,7 +37,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Permission Pack Manager</label>
+    <label>Permission Pack User</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
