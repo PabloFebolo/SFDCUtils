@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value__c</fullName>
+    <description>Summarizes in a simple string the permissions granted, this allows to simplify the general view of assigned permissions and their comparison, which is necessary because depending on the type of component the values of the permissions are different.</description>
+    <externalId>false</externalId>
+    <formula>IF(  (RecordType.DeveloperName  = &apos;Application&apos;  || RecordType.DeveloperName  = &apos;Class&apos;  ) &amp;&amp;  Enable__c  , &apos;E&apos;, &apos;D&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Common Permission &amp;#013;
+E=Enabled &amp;#013;
+D=Disable</inlineHelpText>
+    <label>Value</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
