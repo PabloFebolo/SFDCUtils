@@ -1,0 +1,144 @@
+[
+  {
+    "Id": "0PSKc00000001JmOAI",
+    "Name": "Base",
+    "Profile": null,
+    "IsOwnedByProfile": false,
+    "ObjectPerms": {
+      "totalSize": 1,
+      "done": true,
+      "records": [
+        {
+          "attributes": {
+            "type": "ObjectPermissions",
+            "url": "/services/data/v60.0/sobjects/ObjectPermissions/110Kc0000006RvBIAU"
+          },
+          "SobjectType": "Account",
+          "PermissionsCreate": false,
+          "PermissionsRead": true,
+          "PermissionsDelete": true,
+          "PermissionsViewAllRecords": false,
+          "PermissionsModifyAllRecords": false
+        }
+      ]
+    },
+    "FieldPerms": {
+      "totalSize": 1,
+      "done": true,
+      "records": [
+        {
+          "attributes": {
+            "type": "FieldPermissions",
+            "url": "/services/data/v60.0/sobjects/FieldPermissions/01kKc000002NdywIAC"
+          },
+          "SobjectType": "Account",
+          "Field": "Account.AccountNumber",
+          "PermissionsRead": true,
+          "PermissionsEdit": false
+        }
+      ]
+    },
+    "SetupEntityAccessItems": {
+      "totalSize": 12,
+      "done": true,
+      "records": [
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBXKAY"
+          },
+          "SetupEntityId": "01I2M000002UFNWUA4",
+          "SetupEntityType": "CustomEntityDefinition"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBhKAI"
+          },
+          "SetupEntityId": "01IKc000000GqP0MAK",
+          "SetupEntityType": "CustomEntityDefinition"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBNKAY"
+          },
+          "SetupEntityId": "01p2M00000Nv5RsQAJ",
+          "SetupEntityType": "ApexClass"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBIKAY"
+          },
+          "SetupEntityId": "02u2M000001V0myQAC",
+          "SetupEntityType": "TabSet"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBJKAY"
+          },
+          "SetupEntityId": "02u410000015SMQAA2",
+          "SetupEntityType": "TabSet"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000o9QKAQ"
+          },
+          "SetupEntityId": "0662M000006gfHIQAY",
+          "SetupEntityType": "ApexPage"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBcKAI"
+          },
+          "SetupEntityId": "0CP2M000000TaHSWA0",
+          "SetupEntityType": "CustomPermission"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000oCmKAI"
+          },
+          "SetupEntityId": "0D2Kc000000sXtWKAU",
+          "SetupEntityType": "OrgWideEmailAddress"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000oCcKAI"
+          },
+          "SetupEntityId": "0H42M000000Wa4USAS",
+          "SetupEntityType": "ConnectedApplication"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000oChKAI"
+          },
+          "SetupEntityId": "0N52M000000056bSAA",
+          "SetupEntityType": "ServicePresenceStatus"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000gBmKAI"
+          },
+          "SetupEntityId": "0puKc000000TN1FIAW",
+          "SetupEntityType": "ExternalCredentialParameter"
+        },
+        {
+          "attributes": {
+            "type": "SetupEntityAccess",
+            "url": "/services/data/v60.0/sobjects/SetupEntityAccess/0J0Kc0000000o9LKAQ"
+          },
+          "SetupEntityId": "300Kc0000008RBaIAM",
+          "SetupEntityType": "FlowDefinition"
+        }
+      ]
+    }
+  }
+]
