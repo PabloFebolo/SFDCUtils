@@ -1,0 +1,4 @@
+SELECT QualifiedApiName,IsComponent,IsCompound,DataType,IsDeprecatedAndHidden,Name,IsListVisible
+FROM EntityParticle 
+Where EntityDefinitionId='PermissionSet' 
+  and FieldDefinitionId='PermissionSet.Permissions'
