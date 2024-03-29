@@ -5,8 +5,8 @@
     <externalId>false</externalId>
     <formula>IF(  (RecordType.DeveloperName  = &apos;Application&apos;  || RecordType.DeveloperName  = &apos;Class&apos;  ) &amp;&amp;  Enable__c  , &apos;E&apos;, &apos;D&apos;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>Common Permission &amp;#013;
-E=Enabled &amp;#013;
+    <inlineHelpText>Common Permission　　　　　　　　　　
+E=Enabled　　　　　　　　　　　　　　　　
 D=Disable</inlineHelpText>
     <label>Value</label>
     <required>false</required>
