@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>objectPermissions</fullName>
+    <active>true</active>
+    <description>Allows configuration of access to create, delete, edit, and read records of objects, as well as configuration of the view and modification of all records.</description>
+    <label>Object</label>
+</RecordType>
