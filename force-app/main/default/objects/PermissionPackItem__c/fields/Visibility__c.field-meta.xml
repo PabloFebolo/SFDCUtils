@@ -4,7 +4,9 @@
     <description>Indicates the visibility settings for the tab.</description>
     <externalId>false</externalId>
     <inlineHelpText>* Available—The tab is available on the All Tabs page. Individual users can customize their display to make the tab visible in any app.
+*************
 * None—The tab isn’t available on the All Tabs page or visible in any apps.
+*************
 * Visible—The tab is available on the All Tabs page and appears in the visible tabs for its associated app. Individual users can customize their display to hide the tab or make it visible in other apps.</inlineHelpText>
     <label>Visibility</label>
     <required>false</required>
