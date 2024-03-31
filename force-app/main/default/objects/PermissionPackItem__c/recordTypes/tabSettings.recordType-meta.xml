@@ -2,6 +2,22 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>tabSettings</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows access to tabs.</description>
     <label>Tab</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_Available</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>pkl_None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pkl_Visible</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

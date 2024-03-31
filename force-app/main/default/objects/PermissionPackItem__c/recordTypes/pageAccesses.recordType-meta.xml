@@ -2,6 +2,14 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pageAccesses</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows access to and execution of Visualforce pages.</description>
     <label>Page</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_NotApply</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

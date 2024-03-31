@@ -2,6 +2,14 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>userPermissions</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows activation or deactivation of system parameters.</description>
     <label>System</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_NotApply</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>
