@@ -2,6 +2,14 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>customSettingAccesses</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows use of custom settings.</description>
     <label>Custom Setting</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_NotApply</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

@@ -74,6 +74,30 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Enable__c</fieldItem>
                 <identifier>RecordEnable_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>tabSettings</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Visibility__c</fieldItem>
+                <identifier>RecordVisibility_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>tabSettings</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-86585b12-f1d4-4703-83f0-168f90c0f3da</name>

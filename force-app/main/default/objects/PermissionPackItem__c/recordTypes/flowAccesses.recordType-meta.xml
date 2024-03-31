@@ -2,6 +2,14 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>flowAccesses</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows execution of flows.</description>
     <label>Flow</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_NotApply</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

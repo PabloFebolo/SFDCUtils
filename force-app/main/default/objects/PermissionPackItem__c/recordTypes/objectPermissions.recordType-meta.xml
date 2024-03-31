@@ -2,6 +2,14 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>objectPermissions</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows configuration of access to create, delete, edit, and read records of objects, as well as configuration of the view and modification of all records.</description>
     <label>Object</label>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_NotApply</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

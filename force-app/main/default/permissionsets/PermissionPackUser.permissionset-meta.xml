@@ -57,11 +57,11 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
-        <recordType>PermissionPackItem__c.Application</recordType>
+        <recordType>PermissionPackItem__c.applicationVisibilities</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <recordType>PermissionPackItem__c.Class</recordType>
+        <recordType>PermissionPackItem__c.classAccesses</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
