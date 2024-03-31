@@ -3,9 +3,9 @@
     <fullName>Value__c</fullName>
     <description>Summarizes in a simple string the permissions granted, this allows to simplify the general view of assigned permissions and their comparison, which is necessary because depending on the type of component the values of the permissions are different.</description>
     <externalId>false</externalId>
-    <formula>IF(  (RecordType.DeveloperName  = &apos;Application&apos;  || RecordType.DeveloperName  = &apos;Class&apos;  ) &amp;&amp;  Enable__c  , &apos;E&apos;, &apos;D&apos;)</formula>
+    <formula>IF(  (RecordType.DeveloperName  = &apos;applicationVisibilities&apos;  || RecordType.DeveloperName  = &apos;classAccesses&apos;  ) &amp;&amp;  Enable__c  , &apos;E&apos;, &apos;D&apos;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>Common Permission　　　　　　　　　　
+    <inlineHelpText>Common Permission　　　　　　　　　　　　　　
 E=Enabled　　　　　　　　　　　　　　　　
 D=Disable</inlineHelpText>
     <label>Value</label>
