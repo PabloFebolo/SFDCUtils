@@ -13,6 +13,36 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>ObjectAllRecords__c</picklist>
+        <values>
+            <fullName>pkl_Modify</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pkl_No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>pkl_View</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ObjectRead__c</picklist>
+        <values>
+            <fullName>Disable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>False</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>True</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Visibility__c</picklist>
         <values>
             <fullName>pkl_N%2FA</fullName>

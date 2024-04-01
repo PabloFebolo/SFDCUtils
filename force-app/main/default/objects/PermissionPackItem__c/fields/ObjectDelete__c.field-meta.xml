@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ObjectDelete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether it is allowed (or not) to delete the records of the object</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows deleting (or not) object&apos;s records</inlineHelpText>
+    <label>Delete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

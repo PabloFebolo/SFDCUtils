@@ -13,6 +13,20 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>ObjectAllRecords__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ObjectRead__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Visibility__c</picklist>
         <values>
             <fullName>pkl_Available</fullName>
