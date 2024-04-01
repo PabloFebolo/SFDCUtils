@@ -6,9 +6,24 @@
     <description>Allows configuration of read and edit access to object fields.</description>
     <label>Field</label>
     <picklistValues>
+        <picklist>FieldPermission__c</picklist>
+        <values>
+            <fullName>pkl_Disabled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pkl_Edit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pkl_Read</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Visibility__c</picklist>
         <values>
-            <fullName>pkl_NotApply</fullName>
+            <fullName>pkl_N%2FA</fullName>
             <default>true</default>
         </values>
     </picklistValues>
