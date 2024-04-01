@@ -18,17 +18,12 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>True</fullName>
+                <fullName>pkl_True</fullName>
                 <default>false</default>
                 <label>True</label>
             </value>
             <value>
-                <fullName>False</fullName>
-                <default>false</default>
-                <label>False</label>
-            </value>
-            <value>
-                <fullName>Disable</fullName>
+                <fullName>pkl_Disable</fullName>
                 <default>false</default>
                 <label>Disable</label>
             </value>

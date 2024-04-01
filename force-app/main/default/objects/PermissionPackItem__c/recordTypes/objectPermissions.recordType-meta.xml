@@ -19,7 +19,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>pkl_No</fullName>
+            <fullName>pkl_Sharing</fullName>
             <default>true</default>
         </values>
         <values>
@@ -30,15 +30,11 @@
     <picklistValues>
         <picklist>ObjectRead__c</picklist>
         <values>
-            <fullName>Disable</fullName>
+            <fullName>pkl_Disable</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>False</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>True</fullName>
+            <fullName>pkl_True</fullName>
             <default>true</default>
         </values>
     </picklistValues>
