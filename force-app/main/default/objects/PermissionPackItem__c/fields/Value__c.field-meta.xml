@@ -6,6 +6,10 @@
     <formula>CASE(RecordType.DeveloperName,
      &apos;tabSettings&apos;, CASE(TEXT(Visibility__c),&apos;pkl_Visible&apos;,&apos;V&apos;,&apos;pkl_Available&apos;,&apos;A&apos;,&apos;D&apos;),
      &apos;fieldPermissions&apos;, CASE(TEXT(FieldPermission__c),&apos;pkl_Read&apos;,&apos;R&apos;,&apos;pkl_Edit&apos;,&apos;RE&apos;,&apos;D&apos;),
+     &apos;objectPermissions&apos;,CASE(TEXT(ObjectRead__c),
+                        &apos;pkl_True&apos;,IF(ObjectCreate__c,&apos;CR&apos;,&apos;-R&apos;)+IF(ObjectEdit__c,&apos;E&apos;,&apos;-&apos;)+IF(ObjectDelete__c,&apos;D&apos;,&apos;-&apos;)+&apos; &apos;+CASE(TEXT(ObjectAllRecords__c),&apos;pkl_Sharing&apos;,&apos;SA&apos;,&apos;pkl_View&apos;,&apos;VA&apos;,&apos;pkl_Modify&apos;,&apos;MA&apos;,&apos;--&apos;),
+                        &apos;pkl_Disable&apos;,&apos;D&apos;,
+                        &apos;---- --&apos;),
      IF(Enable__c  , &apos;E&apos;, &apos;D&apos;)
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
