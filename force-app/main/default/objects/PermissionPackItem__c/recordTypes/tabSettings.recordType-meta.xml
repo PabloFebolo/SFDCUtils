@@ -6,13 +6,20 @@
     <description>Allows access to tabs.</description>
     <label>Tab</label>
     <picklistValues>
+        <picklist>FieldPermission__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Visibility__c</picklist>
         <values>
             <fullName>pkl_Available</fullName>
             <default>true</default>
         </values>
         <values>
-            <fullName>pkl_None</fullName>
+            <fullName>pkl_Disabled</fullName>
             <default>false</default>
         </values>
         <values>

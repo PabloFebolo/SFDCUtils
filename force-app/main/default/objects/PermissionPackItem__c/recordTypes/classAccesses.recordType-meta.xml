@@ -6,9 +6,16 @@
     <description>Allows execution of class methods.</description>
     <label>Class</label>
     <picklistValues>
+        <picklist>FieldPermission__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Visibility__c</picklist>
         <values>
-            <fullName>pkl_NotApply</fullName>
+            <fullName>pkl_N%2FA</fullName>
             <default>true</default>
         </values>
     </picklistValues>
