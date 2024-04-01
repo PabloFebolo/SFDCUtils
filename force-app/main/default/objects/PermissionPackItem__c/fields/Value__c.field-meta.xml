@@ -3,10 +3,22 @@
     <fullName>Value__c</fullName>
     <description>Summarizes in a simple string the permissions granted, this allows to simplify the general view of assigned permissions and their comparison, which is necessary because depending on the type of component the values of the permissions are different.</description>
     <externalId>false</externalId>
-    <formula>IF(  (RecordType.DeveloperName  = &apos;applicationVisibilities&apos;  || RecordType.DeveloperName  = &apos;classAccesses&apos;  ) &amp;&amp;  Enable__c  , &apos;E&apos;, &apos;D&apos;)</formula>
+    <formula>CASE(RecordType.DeveloperName,
+     &apos;tabSettings&apos;, CASE(TEXT(Visibility__c),&apos;pkl_Visible&apos;,&apos;V&apos;,&apos;pkl_Available&apos;,&apos;A&apos;,&apos;D&apos;),
+     &apos;fieldPermissions&apos;, CASE(TEXT(FieldPermission__c),&apos;pkl_Read&apos;,&apos;R&apos;,&apos;pkl_Edit&apos;,&apos;RE&apos;,&apos;D&apos;),
+     IF(Enable__c  , &apos;E&apos;, &apos;D&apos;)
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <inlineHelpText>Common Permission　　　　　　　　　　　　　　
-E=Enabled　　　　　　　　　　　　　　　　
+E=Enabled　　　　　　　　　　　　　　　　　　
+D=Disable　　　　　　　　　　　　　　　　　　　　
+Tab Permission　　　　　　　　　　　　　　　
+V=Enabled　　　　　　　　　　　　　　　　　　
+A=Available　　　　　　　　　　　　　　　　　
+D=Disable　　　　　　　　　　　　　　　　　
+Field Permission　　　　　　　　　　　　　　　
+R=Read　　　　　　　　　　　　　　　　　　
+RE=Read &amp; Edit　　　　　　　　　　　　　　　　　
 D=Disable</inlineHelpText>
     <label>Value</label>
     <required>false</required>

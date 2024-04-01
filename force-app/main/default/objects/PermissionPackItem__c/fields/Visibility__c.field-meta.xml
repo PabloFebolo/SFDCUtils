@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visibility__c</fullName>
+    <description>Indicates the visibility settings for the tab.
+* Available—The tab is available on the All Tabs page. Individual users can customize their display to make the tab visible in any app.
+* Visible—The tab is available on the All Tabs page and appears in the visible tabs for its associated app. Individual users can customize their display to hide the tab or make it visible in other apps.
+* Disabled: Indicates explicitly that this permission must NOT be set in this permission pack (allows to remove the permission when deployed to an environment in case the permission was previously set). It will be translated to &apos;none&apos; value in metadata files
+* Not Available: Indicates that this data does not available to the record type defined for the given record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>* Available:The tab is available on the All Tabs page. Individual users can customize their display in other apps.　　　　　　　　　　　　　　　　　　
+* Visible:The tab is available on the All Tabs page and appears in the visible tabs for its associated app. Individual users can customize their display in other apps.
+* Disabled: Indicates explicitly that this permission must NOT be set in this permission pack (allows to remove the permission when deployed to an environment in case the permission was previously set).</inlineHelpText>
+    <label>Visibility</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>pkl_Available</fullName>
+                <default>true</default>
+                <label>Available</label>
+            </value>
+            <value>
+                <fullName>pkl_Visible</fullName>
+                <default>false</default>
+                <label>Visible</label>
+            </value>
+            <value>
+                <fullName>pkl_Disabled</fullName>
+                <default>false</default>
+                <label>Disabled</label>
+            </value>
+            <value>
+                <fullName>pkl_N/A</fullName>
+                <default>false</default>
+                <label>Not Available</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -2,6 +2,21 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>customMetadataTypeAccesses</fullName>
     <active>true</active>
+    <compactLayoutAssignment>HighLight</compactLayoutAssignment>
     <description>Allows use of custom metadata.</description>
     <label>Custom Metadata</label>
+    <picklistValues>
+        <picklist>FieldPermission__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visibility__c</picklist>
+        <values>
+            <fullName>pkl_N%2FA</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

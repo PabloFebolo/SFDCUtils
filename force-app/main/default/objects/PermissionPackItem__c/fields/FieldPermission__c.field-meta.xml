@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FieldPermission__c</fullName>
+    <description>Indicates if the fields are accessible and the kind of access..
+Read. Indicates whether the field can be read (or not).
+Edit. Indicates whether the field can be edited (or not).
+Disabled:  Indicates explicitly that this permission must NOT be set in this permission pack (allows to remove the permission when deployed to an environment in case the permission was previously set).
+Not Available:  Indicates that this data does not available to the record type defined for the given record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>* Read: Indicates whether the field can be read (or not)　　　　　　　　　　　　　　　　　　
+* Edit: Indicates whether the field can be edited (or not)　　　　　　　　　　　　　　　　　　
+* Disabled:  Indicates explicitly that this permission must NOT be set in this permission pack (allows to remove the permission when deployed to an environment in case the permission was previously set).</inlineHelpText>
+    <label>Field Permission</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>pkl_Read</fullName>
+                <default>false</default>
+                <label>Read</label>
+            </value>
+            <value>
+                <fullName>pkl_Edit</fullName>
+                <default>false</default>
+                <label>Edit</label>
+            </value>
+            <value>
+                <fullName>pkl_Disabled</fullName>
+                <default>false</default>
+                <label>Disabled</label>
+            </value>
+            <value>
+                <fullName>pkl_N/A</fullName>
+                <default>false</default>
+                <label>Not Available</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
