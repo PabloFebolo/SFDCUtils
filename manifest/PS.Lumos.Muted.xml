@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CSR_Contractor_Muted</members>
+        <members>CSR_LumosEmployee_Muted</members>
+        <members>CSR_LumosManagerPSGroup_Muted</members>
+        <members>CarrierServicesPSGroup_Muted</members>
+        <members>NetOpeMngr_Muted</members>
+        <members>ServDelivery_Muted</members>
+        <members>CustomerPortalPSGroup_Muted</members>
+        <members>HeadOfSalesPSGroup_Muted</members>
+        <members>IPEngineeringPSGroup_Muted</members>
+        <members>IntegrationHigh_Muted</members>
+        <members>InternalUserBasePSGroup_Muted</members>
+        <members>NSTier1_Muted</members>
+        <members>OPSFieldTechnicianBuriedDropPSGroup_Muted</members>
+        <members>OSPCoordinatorPSGroup_Muted</members>
+        <members>ProductManagerPSGroup_Muted</members>
+        <members>SalesAdvisorContractor2_Muted</members>
+        <members>SalesAdvisorContractorGroup_Muted</members>
+        <members>SalesAdvisorPSGroup_Muted</members>
+        <members>SalesDirectorPSGroup_Muted</members>
+        <members>SalesManagerPSGroup_Muted</members>
+        <members>ServiceDeliveryGroup_Muted</members>
+        <members>VoiceEngineeringPSGroup_Muted</members>
+        <members>WarehousePSGroup_Muted</members>
+        <members>MakeReadyTechnicianPSGroup_Muted</members>
+        <members>NOCAnalyst_Muted</members>
+        <members>NSTier2_Muted</members>
+        <members>NetworkSupportAnalystPSGroup_Muted</members>
+        <members>OSPEngineeringPSGroup_Muted</members>
+        <members>ResidentialTechnicianPSGroup_Muted</members>
+        <members>SalesAdvisor_Muted</members>
+        <name>MutingPermissionSet</name>
+    </types>
+    
+    <version>59.0</version>
+</Package>
