@@ -22,16 +22,16 @@
         <members>IPEngineering</members>
         <members>MakeReadyTechnician</members>
         <members>Messaging_User_Permission</members>
-        <members>NetOpeMngr</members>
         <members>Network_Internal_User_PS</members>
         <members>NetworkOperationscenterNOCanalyst</members>
         <members>NetworkSupportAnalyst</members>
         <members>NetworkSupportTier1</members>
         <members>NetworkSupportTier2</members>
-        <members>OmniStudioExecution</members>
+        <members>force__OmniStudioExecution</members>
         <members>OperationsManager</members>
         <members>OSPCoordinator</members>
         <members>OSPEngineering</members>
+        <members>PasswordNeverExpires</members>
         <members>ProductManager</members>
         <members>ResidentialTechnician</members>
         <members>Sales_Rep</members>
@@ -41,9 +41,11 @@
         <members>SalesDirector</members>
         <members>SalesManager</members>
         <members>ServiceDelivery</members>
+        <members>SMS_Permission</members>
         <members>Symphonica</members>
         <members>TechnicianUserBasePS</members>
-        <members>VoiceEngineerin</members>
+        <members>VoiceEngineering</members>
+        <members>Warehouse</members>
         <name>PermissionSet</name>
     </types>
     

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>ChangeMandatoryTaskStatus</name>
+    </customPermissions>
+    <description>This permission set is to be assigned to System Administrators to overcome the Task Validation Rule &apos;AvoidSalesAdvisorChangingTaskStatus&apos;</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>ChangeMandatoryTaskStatusPermissionSet</label>
+</PermissionSet>
