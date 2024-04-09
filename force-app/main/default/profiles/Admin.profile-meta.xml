@@ -67842,7 +67842,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Account.vlocity_cmt__Consumer</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
