@@ -19,6 +19,7 @@
         <members>FSL_Mobile_License</members>
         <members>FSL_Resource_Permissions</members>
         <members>HeadOfSales</members>
+        <name>InternalUserBasePS</name>
         <members>IPEngineering</members>
         <members>MakeReadyTechnician</members>
         <members>Messaging_User_Permission</members>
