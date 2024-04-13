@@ -29,6 +29,7 @@
         <members>NetworkSupportTier1</members>
         <members>NetworkSupportTier2</members>
         <!-- <members>force__OmniStudioExecution</members> -->
+        <members>Omnistudio_Process_Community</members>
         <members>OperationsManager</members>
         <members>OSPCoordinator</members>
         <members>OSPEngineering</members>
