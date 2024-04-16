@@ -1,0 +1,16 @@
+{
+  "types": [
+      {"node": "applicationVisibilities", "subnode": "application"},
+      {"node": "classAccesses", "subnode": "apexClass"},
+      {"node": "fieldPermissions", "subnode": "field"},
+      {"node": "layoutAssignments", "subnode": "layout"},
+      {"node": "tabVisibilities", "subnode": "tab"},
+      {"node": "pageAccesses", "subnode": "apexPage"},
+      {"node": "customMetadataTypeAccesses", "subnode": "name"},
+      {"node": "customPermissions", "subnode": "name"},
+      {"node": "customSettingAccesses", "subnode": "name"},
+      {"node": "flowAccesses", "subnode": "flow"},
+      {"node": "objectPermissions", "subnode": "object"},
+      {"node": "recordTypeVisibilities", "subnode": "recordType"}
+  ]
+}
