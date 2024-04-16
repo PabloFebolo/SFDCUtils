@@ -36,11 +36,12 @@ nodos_config = [
 # Argument parser setup
 parser = argparse.ArgumentParser(description="Elimina nodos específicos de un archivo XML")
 parser.add_argument('--pkg', type=lambda s: s.split(','), required=True, help='Texto inicial para identificar nodos a eliminar, separado por comas')
+parser.add_argument('--profile', type=str, required=True, help='Ruta al archivo de perfil XML a procesar')
 args = parser.parse_args()
 
 # Carga inicial y configuración del documento XML
 NAMESPACE = "http://soap.sforce.com/2006/04/metadata"
-xml_path = '../../force-app/main/default/profiles/Admin.profile-meta.xml'
+xml_path = args.profile  # Usar el valor de la línea de comando para xml_path
 output_path = '../../force-app/main/default/profiles/AdminNew.profile-meta.xml'
 
 tree = ET.parse(xml_path)
@@ -53,5 +54,3 @@ print(f"Total de nodos eliminados: {total_removed}")
 
 # Guardar el archivo modificado
 tree.write(output_path, encoding='utf-8', xml_declaration=True)
-
-
