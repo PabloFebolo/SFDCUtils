@@ -48,4 +48,6 @@ ET.register_namespace('', NAMESPACE)
 total_removed = eliminar_varios_tipos_nodos(root, NAMESPACE, args.pkg, nodos_config)
 print(f"Total de nodos eliminados: {total_removed}")
 
-tree.write(output_path, encoding='utf-8', xml_declaration=True)
+# Escribir el archivo XML con finales de línea \n
+with open(output_path, 'wb') as f:
+    tree.write(f, encoding='utf-8', xml_declaration=True)
