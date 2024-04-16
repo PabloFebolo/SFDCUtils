@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import argparse
+import os
 
 def eliminar_nodos_por_criterio(root, namespace, nodo_padre, nodo_hijo, texto_inicio):
     removed_count = 0
@@ -17,7 +18,6 @@ def eliminar_varios_tipos_nodos(root, namespace, textos_inicio, nodos_config):
             removed_count += eliminar_nodos_por_criterio(root, namespace, nodo_padre, nodo_hijo, texto_inicio)
     return removed_count
 
-# Configuración de nodos y subnodos como una lista de tuplas
 nodos_config = [
     ('applicationVisibilities', 'application'),
     ('classAccesses', 'apexClass'),
@@ -33,24 +33,30 @@ nodos_config = [
     ('recordTypeVisibilities', 'recordType')
 ]
 
-# Argument parser setup
 parser = argparse.ArgumentParser(description="Elimina nodos específicos de un archivo XML")
 parser.add_argument('--pkg', type=lambda s: s.split(','), required=True, help='Texto inicial para identificar nodos a eliminar, separado por comas')
 parser.add_argument('--profile', type=str, required=True, help='Ruta al archivo de perfil XML a procesar')
 args = parser.parse_args()
 
-# Carga inicial y configuración del documento XML
 NAMESPACE = "http://soap.sforce.com/2006/04/metadata"
-xml_path = args.profile  # Usar el valor de la línea de comando para xml_path
-output_path = '../../force-app/main/default/profiles/AdminNew.profile-meta.xml'
+xml_path = args.profile
+
+# Generar el nombre de archivo de salida
+base_dir = os.path.dirname(xml_path)
+base_name = os.path.basename(xml_path)
+file_root, file_extension = os.path.splitext(base_name)
+
+# Insertar 'New' antes del primer punto en el nombre del archivo
+first_part = file_root.split('.')[0] + "New"  # Añadir 'New' a la primera parte
+remaining_parts = '.'.join(file_root.split('.')[1:]) if '.' in file_root else ''
+output_filename = f"{first_part}.{remaining_parts}{file_extension}"
+output_path = os.path.join(base_dir, output_filename)
 
 tree = ET.parse(xml_path)
 root = tree.getroot()
-ET.register_namespace('', NAMESPACE)  # Registrar el namespace
+ET.register_namespace('', NAMESPACE)
 
-# Llamada a la nueva función para eliminar nodos con texto de inicio especificado desde la línea de comandos
 total_removed = eliminar_varios_tipos_nodos(root, NAMESPACE, args.pkg, nodos_config)
 print(f"Total de nodos eliminados: {total_removed}")
 
-# Guardar el archivo modificado
 tree.write(output_path, encoding='utf-8', xml_declaration=True)
