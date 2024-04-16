@@ -44,3 +44,4 @@ scripts/apex/hello.apex
 
 scripts/soql/account.soql
 manifest/packageRetrieve.xml
+status.json
