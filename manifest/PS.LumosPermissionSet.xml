@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Warehouse</members>
+        <members>SalesAdvisorRep</members>
+        <members>TechnicianUserBasePS</members>
+        <members>InternalUserBasePS</members>
+        <members>CustomerPortal</members>
+        <members>Warehouse</members>
+        <members>InternalUserBasePS</members>
+        <members>Network_Internal_User_PS</members>
+        <members>CSRLumosManager</members>
+        <members>CSRLumosEmployee</members>
+        <members>FSLAdminOptimizerPS</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>59.0</version>
+</Package>

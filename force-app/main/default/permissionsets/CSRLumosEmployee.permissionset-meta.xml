@@ -14,6 +14,10 @@
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
+        <name>Retention_User</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
         <name>SeeServiceAccountScreenFlowFlagRed</name>
     </customPermissions>
     <description>Allows users to create and update the service cases.</description>
@@ -40,6 +44,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.NladId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.isSuspended__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -219,6 +228,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Order.Commissionable_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Disconnect_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Order.GTV_Order_Cancel_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -344,14 +363,6 @@
     </tabSettings>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ActivitiesAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ApiEnabled</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditTask</name>
     </userPermissions>
 </PermissionSet>

@@ -81,6 +81,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Order.Commissionable_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Order.GTV_Order_Cancel_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -16,7 +16,16 @@
         <apexClass>OrderDetailController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <description>A person who has purchased a product or service from the company, that person remains a customer even if the service is no longer provided</description>
+    <classAccesses>
+        <apexClass>getPaymentRelatedList</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>A person who has purchased a product or service from the company, that person remains a customer even if the service is no longer provided.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.AccountNumber</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountNumberLumos__c</field>
@@ -30,6 +39,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Billing_Anniversary_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Outage_Indicator__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -240,11 +254,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Entitlement.WorkOrdersPerEntitlement</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Event.IsMandatoryTask__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -499,22 +508,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Order.BillToContactId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Order.BillingAddress</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.CompanyAuthorizedById</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.CompanyAuthorizedDate</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -534,11 +533,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Order.CustomerAuthorizedDate</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Order.Description</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -554,7 +548,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Order.OpportunityId</field>
+        <field>Order.OrderItemCount2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -568,6 +562,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.PONR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Order.Partner__c</field>
         <readable>true</readable>
@@ -575,21 +574,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.Persona__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.PoDate</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.PoNumber</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.QuoteId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -610,11 +594,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.Service_Identifier__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.ShipToContactId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -680,11 +659,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Order.TypeofSite__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Order.WorkTypeDuration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1768,11 +1742,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Task.IsMandatoryTask__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>TimeSlot.External_FSL_TS__c</field>
         <readable>true</readable>
@@ -1790,6 +1759,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TimeSlot.RecordsetFilterCriteriaId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.ServiceAddress__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2269,6 +2243,201 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.ALLOCATED_ON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.AUTHORIZED_ON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.AUTH_CODE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.AUTO_ALLOCATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.CANCEL_AMOUNT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.CANCEL_CURRENCY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.CONVERSION_RATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.CURRENCY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.DESCRIPTION__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.EFFECTIVE_CONVERSION_RATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.GTV_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.IP_ADDRESS__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.MARK_FOR_SETTLEMENT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.MERCHANT_REFERENCE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.OCCURRED_ON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PAYMENT_BATCH_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PAYMENT_METHOD_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PAYMENT_METHOD_TYPE_DESCRIPTION__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PAYMENT_METHOD_TYPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PAYMENT_SOURCE_TYPE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.PREVIOUS_PAYMENT_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.REFERENCE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.REFUND_AMOUNT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.REFUND_CURRENCY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.REQUEST_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_BATCH_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_COUNT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_SCHEDULE_CODE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_SCHEDULE_NAME__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_SERIES_STATUS_REASON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_SERIES_STATUS__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.RETRY_SERIES_UUID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.SETTLEMENT_BATCH_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.SETTLEMENT_STATUS_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.TRANSACTION_NUMBER__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.UNAPPLIED_AMOUNT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.UNAPPLIED_CURRENCY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.VELOCITY_INFO_CODE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__PaymentAdjustment__c.VOID_RETRY_COUNT__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>vlocity_cmt__PaymentAdjustment__c.vlocity_cmt__Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2344,11 +2513,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>vlocity_cmt__PaymentMethod__c.Card_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>vlocity_cmt__PaymentMethod__c.vlocity_cmt__CardHolderName__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2383,7 +2547,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>vlocity_cmt__PaymentMethod__c.vlocity_cmt__Last4Numbers__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2400,6 +2564,76 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>vlocity_cmt__PaymentMethod__c.vlocity_cmt__PaymentMethodIdentifier__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.BALANCE_CURRENCY__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.BILL_CYCLE_RUN_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.Currency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.DISPUTED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.DISTRIBUTION_STATUS__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.GTV_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.LATE_FEE_CHARGED__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.OCCURRED_ON__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.ORIGINAL_DUE_DATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.OrderId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.PAID_DATE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.PREVIOUS_INVOICE_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>vlocity_cmt__Statement__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2534,15 +2768,6 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Lumos_Cart__e</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
@@ -2657,14 +2882,6 @@
         <tab>vlocity_cmt__PaymentMethod__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ActivitiesAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditTask</name>
-    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>FieldServiceAccess</name>
