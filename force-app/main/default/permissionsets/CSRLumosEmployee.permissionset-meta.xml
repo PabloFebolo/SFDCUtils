@@ -233,11 +233,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Order.Disconnect_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Order.GTV_Order_Cancel_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
