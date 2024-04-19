@@ -9,6 +9,11 @@
         <name>SeeServiceAccountScreenFlowFlagRed</name>
     </customPermissions>
     <description>A Sales Manager is in charge of hiring new employees, determining the need for training and delivering it, coaching Sales Advisors, and establishing Sales Territories</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Commissionable_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Sales Manager</label>
     <objectPermissions>

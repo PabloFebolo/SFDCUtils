@@ -1470,6 +1470,10 @@
         <recordType>Order_Cancel_Reasons__c.GTV_Cancel_Order</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>vlocity_cmt__PaymentMethod__c.CreditCard</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <tabSettings>
         <tab>AreaCoverage__c</tab>
         <visibility>Visible</visibility>
