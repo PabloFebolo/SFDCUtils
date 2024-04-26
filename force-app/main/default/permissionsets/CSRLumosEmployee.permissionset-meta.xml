@@ -6,10 +6,6 @@
     </classAccesses>
     <customPermissions>
         <enabled>true</enabled>
-        <name>CaseStatusClosedNotAllowed</name>
-    </customPermissions>
-    <customPermissions>
-        <enabled>true</enabled>
         <name>CaseStatusResolvedNotAllowed</name>
     </customPermissions>
     <customPermissions>
