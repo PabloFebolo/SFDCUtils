@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>A sales representative promotes and sells a Lumos’s product (Contractor) in-bound/out-bound and ‘door’-to-door&apos;.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Advisor Contractor</label>
+    <mutingPermissionSets>SalesAdvisorContractor2_Muted</mutingPermissionSets>
+    <permissionSets>ACI_System</permissionSets>
+    <permissionSets>Avalara_Permission_Set</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>GTV_Permission_Set</permissionSets>
+    <permissionSets>HeadOfSales</permissionSets>
+    <permissionSets>InternalUserBasePS</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>OrchestrationPlanAccess</permissionSets>
+    <permissionSets>SalesAdvisorContractor</permissionSets>
+    <permissionSets>SalesAdvisorRep</permissionSets>
+    <permissionSets>SalesDirector</permissionSets>
+    <permissionSets>SalesManager</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <permissionSets>Sales_Support_PS</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Manages and supervises daily operations</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>NetOpeMngr</label>
+    <mutingPermissionSets>NetOpeMngr_Muted</mutingPermissionSets>
+    <permissionSets>ACI_System</permissionSets>
+    <permissionSets>Avalara_Permission_Set</permissionSets>
+    <permissionSets>FSL_Dispatcher_License</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>GTV_Permission_Set</permissionSets>
+    <permissionSets>IPEngineering</permissionSets>
+    <permissionSets>InternalUserBasePS</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>NetworkSupportTier1</permissionSets>
+    <permissionSets>NetworkSupportTier2</permissionSets>
+    <permissionSets>OperationsManager</permissionSets>
+    <permissionSets>ProductManager</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>TechnicianUserBasePS</permissionSets>
+    <permissionSets>VoiceEngineering</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

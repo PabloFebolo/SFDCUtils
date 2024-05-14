@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SalesAdvisorPSGroup</label>
+    <mutingPermissionSets>SalesAdvisorPSGroup_Muted</mutingPermissionSets>
+    <permissionSets>ACI_System</permissionSets>
+    <permissionSets>Avalara_Permission_Set</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>GTV_Permission_Set</permissionSets>
+    <permissionSets>HeadOfSales</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>SalesAdvisorContractor</permissionSets>
+    <permissionSets>SalesAdvisorRep</permissionSets>
+    <permissionSets>SalesDirector</permissionSets>
+    <permissionSets>SalesManager</permissionSets>
+    <permissionSets>Sales_Support_PS</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

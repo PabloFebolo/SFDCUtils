@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows users to create and update the service cases.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>NSTier1</label>
+    <mutingPermissionSets>NSTier1_Muted</mutingPermissionSets>
+    <permissionSets>CaseStatusClosedNotAllowed</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>IPEngineering</permissionSets>
+    <permissionSets>InternalUserBasePS</permissionSets>
+    <permissionSets>Live_Agent_Setup_Flow</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>NetworkSupportTier1</permissionSets>
+    <permissionSets>Sales_Support_PS</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>TechnicianUserBasePS</permissionSets>
+    <permissionSets>VoiceEngineering</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

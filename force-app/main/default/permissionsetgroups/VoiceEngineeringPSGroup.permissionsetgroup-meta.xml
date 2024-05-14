@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows users to create and update the service cases.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Voice Engineering PS Group</label>
+    <mutingPermissionSets>VoiceEngineeringPSGroup_Muted</mutingPermissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>IPEngineering</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>NetworkOperationscenterNOCanalyst</permissionSets>
+    <permissionSets>VoiceEngineering</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

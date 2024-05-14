@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Network Support Analyst PS Group</label>
+    <mutingPermissionSets>NetworkSupportAnalystPSGroup_Muted</mutingPermissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>IPEngineering</permissionSets>
+    <permissionSets>InternalUserBasePS</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>NetworkSupportAnalyst</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>TechnicianUserBasePS</permissionSets>
+    <permissionSets>VoiceEngineering</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

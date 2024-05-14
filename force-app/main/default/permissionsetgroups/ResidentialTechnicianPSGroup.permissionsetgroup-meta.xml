@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Residential Technician PS Group</label>
+    <mutingPermissionSets>ResidentialTechnicianPSGroup_Muted</mutingPermissionSets>
+    <permissionSets>Contact_Permission_For_Mobile</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>FSL_Mobile_License</permissionSets>
+    <permissionSets>FSL_Resource_License</permissionSets>
+    <permissionSets>FSL_Resource_Permissions</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>ResidentialTechnician</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>TechnicianUserBasePS</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

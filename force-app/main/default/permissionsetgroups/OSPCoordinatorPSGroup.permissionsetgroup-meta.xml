@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Facilitates the maintenance, repair of a. Outside Plant (OSP) network.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>OSP Coordinator PS Group</label>
+    <mutingPermissionSets>OSPCoordinatorPSGroup_Muted</mutingPermissionSets>
+    <permissionSets>FSL_Coordinator</permissionSets>
+    <permissionSets>FSL_Dispatcher_License</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>OSPCoordinator</permissionSets>
+    <permissionSets>OSPEngineering</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

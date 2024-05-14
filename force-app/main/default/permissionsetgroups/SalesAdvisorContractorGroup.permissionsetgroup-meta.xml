@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>A sales representative promotes and sells a Lumos’s product (Contractor) in-bound/out-bound and ‘door’-to-door&apos;.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SalesAdvisorContractorGroup</label>
+    <mutingPermissionSets>SalesAdvisorContractorGroup_Muted</mutingPermissionSets>
+    <permissionSets>CSRContractor</permissionSets>
+    <permissionSets>SalesAdvisorRep</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Customer Service Representative Supporting customers through Call Center sales channel.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CSR_ Lumos Employee</label>
+    <mutingPermissionSets>CSR_LumosEmployee_Muted</mutingPermissionSets>
+    <permissionSets>ACI_System</permissionSets>
+    <permissionSets>Avalara_Permission_Set</permissionSets>
+    <permissionSets>CSRContractor</permissionSets>
+    <permissionSets>CSRLumosEmployee</permissionSets>
+    <permissionSets>CSRLumosManager</permissionSets>
+    <permissionSets>CarrierServices</permissionSets>
+    <permissionSets>FSL_Bundle_Permissions</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>GTV_Permission_Set</permissionSets>
+    <permissionSets>InternalUserBasePS</permissionSets>
+    <permissionSets>Live_Agent_Setup_Flow</permissionSets>
+    <permissionSets>MarketingCloud</permissionSets>
+    <permissionSets>OrchestrationPlanAccess</permissionSets>
+    <permissionSets>Symphonica</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

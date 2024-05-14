@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to integration user with high permission</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>IntegrationHigh</label>
+    <mutingPermissionSets>IntegrationHigh_Muted</mutingPermissionSets>
+    <permissionSets>ACI_System</permissionSets>
+    <permissionSets>API_Only</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>PasswordNeverExpires</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
