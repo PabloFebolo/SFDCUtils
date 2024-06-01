@@ -1,11 +1,10 @@
-## [Unreleased]
+# [Unreleased]
 
-## [1.0.0] - 2020-10-22
+## [1.0.1] - 2024-06-01
 
 ### Added
 
-- A ChangeLog (this file)
-- New utility **ObtenerFechaSLA**
+- New permission set "PasswordNeverExpires"
 
 ### Changed
 
